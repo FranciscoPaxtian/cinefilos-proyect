@@ -1,0 +1,74 @@
+create database cinefilos;
+
+create table Empresa(
+    ID_Empresa integer NOT NULL,
+    Nombre varchar,
+    primary key(ID_Empresa)
+);
+
+create table Local(
+    ID_Local integer NOT NULL,
+    ID_Empresa integer NOT NULL,
+    Nombre varchar,
+    Telefono varchar,
+    Direccion varchar,
+    foreign key (ID_Empresa) references Empresa,
+    primary key (ID_Local)
+);
+
+create table Socio(
+    ID_Socio integer NOT NULL,
+    ID_Local integer NOT NULL,
+    Nombre varchar,
+    Telefono varchar,
+    Direccion varchar,
+    Numero_Rentas integer,
+    primary key(ID_Socio),
+    foreign key (ID_Local) references Local
+);
+
+create table Renta(
+    ID_Renta integer NOT NULL,
+    ID_Local integer NOT NULL,
+    ID_Socio integer NOT NULL,
+    Fecha_Renta date,
+    foreign key (ID_Local) references Local,    
+    foreign key (ID_Socio) references Socio,
+    primary key (ID_Renta)   
+);
+
+create table Pelicula(
+    ID_Pelicula integer NOT NULL,
+    ID_Local integer NOT NULL,
+    Titulo varchar,
+    Genero varchar,
+    Precio integer,
+    Numero_Rentas integer,
+    Existencias integer,
+    foreign key (ID_Local) references Local,  
+    primary key (ID_Pelicula)
+);
+
+create table Det_Renta(    
+    ID_Renta integer NOT NULL,
+    ID_Pelicula integer NOT NULL, 
+    Cantidad integer,
+    Total integer,
+    Abono integer,
+    A_Liquidar integer,
+    Consecutivo integer,
+    foreign key (ID_Renta) references Renta,
+    foreign key (ID_Pelicula) references Pelicula,
+    primary key (Consecutivo)
+);
+
+
+
+             
+
+    
+
+
+
+
+    
