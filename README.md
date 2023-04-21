@@ -9,7 +9,7 @@ El “abono mensual de N películas” permite  que un socio pueda alquilar cada
 que depende de N; cada película-día adicional que alquile el socio cada mes se pagará de acuerdo con el criterio utilizado en el abono por el alquiler de película, 
 con un porcentaje de descuento adicional que depende de N.
 
->>>Proyecto creado en mayo del 2021<<<
+>>>Proyecto creado en mayo del 2021
 
 Capturas del proyecto:
 ![Captura de pantalla (35)](https://user-images.githubusercontent.com/118093990/233717735-9df1928e-5b70-41cc-92cb-7f4ca3843a1e.png)
